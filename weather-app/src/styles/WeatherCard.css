@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../assets/appImage.jpg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+;
+}
+
+.weather-card-container {
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle border for the Aero look */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  max-width: 600px;
+  position: absolute; /* Position the container absolutely */
+  bottom: 70px; /* Adjust position from the bottom */
+  left: 100px; /* Adjust position from the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+  text-align: justify;
+  font-weight: bold;
+  color: black;
+  width: 300px; /* Fixed width */
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.weather-info h3 {
+  margin: 10px 0;
+}
+
+.weather-info img {
+  width: 50px;
+  height: 50px;
+}

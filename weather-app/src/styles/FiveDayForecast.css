@@ -1,0 +1,51 @@
+.five-day-forecast-container {
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px;
+  width: 500px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  position: absolute; /* Position the container absolutely */
+  top: 50px; /* Position it 20px from the top */
+  right: 100px; /* Position it 20px from the right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+  overflow: hidden; /* Prevent scrolling for the container itself */
+  text-align: justify;
+  font-weight: bold;
+  color: black;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Remove extra spacing between items */
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  max-height: 100%; /* Ensure it takes the full height of the container */
+  overflow-y: auto; /* Enable vertical scrolling for the list */
+}
+
+.forecast-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a horizontal line below each item */
+}
+
+.forecast-item:last-child {
+  border-bottom: none; /* Remove the line after the last item */
+}
+
+.forecast-item img {
+  width: 40px; /* Consistent icon size */
+  height: 40px;
+}
+
+.forecast-item p {
+  margin: 0;
+  font-size: 14px; /* Match font size with other components */
+  color: #333; /* Darker text for better readability */
+}
