@@ -6,7 +6,6 @@ HU-Edge-React is a weather application built using React. It provides the follow
 - Shows an hourly weather forecast.
 - Displays a 5-day weather forecast.
 - Allows users to toggle between Celsius and Fahrenheit for temperature display.
-- Includes a search bar with city name suggestions as the user types.
 
 ## Features
 1. **Current Weather**:
