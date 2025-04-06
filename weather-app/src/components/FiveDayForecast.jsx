@@ -14,10 +14,9 @@ const FiveDayForecast = ({ latitude, longitude }) => {
           throw new Error("Failed to fetch 5-day forecast");
         }
         const data = await response.json();
-        console.log("5-day forecast data:", data.forecast.forecastday); // Debug log
+      
         setFiveDayForecast(data.forecast.forecastday);
       } catch (err) {
-        console.error("Error fetching 5-day forecast:", err.message);
         setError(err.message);
       }
     };

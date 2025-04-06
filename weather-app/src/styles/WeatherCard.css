@@ -1,29 +1,29 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('../assets/appImage.jpg'); /* Path to your image */
+  background-image: url('../assets/appImage.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  background-attachment: fixed;
 ;
 }
 
 .weather-card-container {
-  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle border for the Aero look */
-  border-radius: 10px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
   padding: 20px;
   max-width: 600px;
-  position: absolute; /* Position the container absolutely */
-  bottom: 70px; /* Adjust position from the bottom */
-  left: 100px; /* Adjust position from the left */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+  position: absolute;
+  bottom: 70px;
+  left: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: justify;
   font-weight: bold;
   color: black;
-  width: 300px; /* Fixed width */
+  width: 300px;
 }
 
 .search-form {
