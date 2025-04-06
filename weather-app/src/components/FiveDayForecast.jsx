@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react";
 
-const FiveDayForecast = ({ latitude, longitude }) => {
+const FiveDayForecast = ({ city, coords }) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchFiveDayForecast = async () => {
+    const fetchFiveDayForecast = async (query) => {
       try {
         const response = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=d52a59194ab1406eb72104832250404&q=${latitude},${longitude}&days=5`
+          `https://api.weatherapi.com/v1/forecast.json?key=d52a59194ab1406eb72104832250404&q=${query}&days=5`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch 5-day forecast");
         }
         const data = await response.json();
-      
         setFiveDayForecast(data.forecast.forecastday);
       } catch (err) {
         setError(err.message);
       }
     };
 
-    if (latitude && longitude) {
-      fetchFiveDayForecast();
+    if (city) {
+      fetchFiveDayForecast(city);
+    } else if (coords) {
+      fetchFiveDayForecast(`${coords.latitude},${coords.longitude}`);
     }
-  }, [latitude, longitude]);
+  }, [city, coords]);
 
   if (error) {
     return <div>Error: {error}</div>;
