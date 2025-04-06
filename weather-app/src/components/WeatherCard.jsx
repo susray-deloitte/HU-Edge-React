@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const WeatherCard = ({ city, coords }) => {
+const WeatherCard = ({ city, coords, isCelsius }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -37,7 +37,7 @@ const WeatherCard = ({ city, coords }) => {
     return <div>Loading...</div>;
   }
 
-  const { temp_c, condition, last_updated } = weatherData.current;
+  const { temp_c, temp_f, condition, last_updated } = weatherData.current;
   const { text, icon } = condition;
   const { name, region, country } = weatherData.location;
 
@@ -52,7 +52,7 @@ const WeatherCard = ({ city, coords }) => {
           {name}, {region}, {country}
         </h3>
         <p>Last Updated: {last_updated}</p>
-        <p>Temperature: {temp_c}°C</p>
+        <p>Temperature: {isCelsius ? `${temp_c}°C` : `${temp_f}°F`}</p>
       </div>
     </div>
   );

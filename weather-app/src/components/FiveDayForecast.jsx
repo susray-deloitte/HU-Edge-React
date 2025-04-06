@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const FiveDayForecast = ({ city, coords }) => {
+const FiveDayForecast = ({ city, coords, isCelsius }) => {
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const [error, setError] = useState(null);
 
@@ -42,8 +42,8 @@ const FiveDayForecast = ({ city, coords }) => {
         {fiveDayForecast.map((day, index) => (
           <li key={index} className="forecast-item">
             <p>Date: {day.date}</p>
-            <p>High: {day.day.maxtemp_c}°C</p>
-            <p>Low: {day.day.mintemp_c}°C</p>
+            <p>High: {isCelsius ? `${day.day.maxtemp_c}°C` : `${day.day.maxtemp_f}°F`}</p>
+            <p>Low: {isCelsius ? `${day.day.mintemp_c}°C` : `${day.day.mintemp_f}°F`}</p>
             <p>
               Condition: {day.day.condition.text}
               <img

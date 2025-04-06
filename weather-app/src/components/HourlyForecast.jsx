@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const HourlyForecast = ({ city, coords }) => {
+const HourlyForecast = ({ city, coords, isCelsius }) => {
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [error, setError] = useState(null);
 
@@ -42,7 +42,10 @@ const HourlyForecast = ({ city, coords }) => {
         {hourlyForecast.map((hour, index) => (
           <li key={index} className="forecast-item">
             <p>Time: {hour.time.split(" ")[1]}</p>
-            <p>Temperature: {hour.temp_c}°C</p>
+            <p>
+              Temperature:{" "}
+              {isCelsius ? `${hour.temp_c}°C` : `${hour.temp_f}°F`}
+            </p>
             <p>Condition: {hour.condition.text}</p>
           </li>
         ))}
