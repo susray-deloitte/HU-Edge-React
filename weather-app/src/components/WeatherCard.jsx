@@ -7,7 +7,7 @@ const WeatherCard = ({ city, coords, isCelsius }) => {
   const fetchWeatherData = async (query) => {
     try {
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=d52a59194ab1406eb72104832250404&q=${query}`
+        `https://api.weatherapi.com/v1/current.json?key=<YOUR_API_KEY>&q=${query}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch weather data");

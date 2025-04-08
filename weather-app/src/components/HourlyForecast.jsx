@@ -8,7 +8,7 @@ const HourlyForecast = ({ city, coords, isCelsius }) => {
     const fetchHourlyForecast = async (query) => {
       try {
         const response = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=d52a59194ab1406eb72104832250404&q=${query}&hours=24`
+          `https://api.weatherapi.com/v1/forecast.json?key=<YOUR_API_KEY>&q=${query}&hours=24`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch hourly forecast");
